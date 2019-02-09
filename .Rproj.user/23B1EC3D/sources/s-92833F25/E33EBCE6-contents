@@ -1,0 +1,55 @@
+library(tidyverse)
+library(jsonlite)
+library(httr)
+
+# Remove current token
+file.remove('.httr-oauth')
+
+
+cle <- "2adaab13b0c077795b313f2af33c0c9a62a7cf94d1a870a1323030a878555b7e"
+secret <- "4MfxyS0uwV0vrdsCAaAjJS3AbJwFCpR4qhQlmNrktJImNqm9U8Rzp7UOHO5og6Ir"
+
+
+request_body <- list(
+  client_id = cle,
+  response_type = "code",
+  redirect_uri = "http://localhost:1410/")
+
+result_auth <- POST(
+  "https://secure.indeed.com/account/oauth?",
+  body = request_body,
+  encode = "form"
+)
+
+
+auth_header <- add_headers("Authorization" = paste("Bearer", content(result_auth)$access_token))
+
+
+uastring <- "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+# Parametres de la requete
+liste_parametres <- 
+  list(q = "economist",
+       l = "New York City",
+       userip = "1.2.3.4",
+       useragent = uastring,
+       client_id = cle,
+       v = 1,
+       limit = 1)
+
+# Retirer les parametres non precises
+liste_parametres <- 
+  liste_parametres[sapply(liste_parametres, function(x) !is.null(x))]
+
+# Requête
+url <- "https://auth.indeed.com/resumes"
+reponse <- GET(url, query = liste_parametres, auth_header)
+
+
+
+
+res_content <- content(reponse)
+
+res_content[[1]]
+
+res_content[[2]]$resumes
+

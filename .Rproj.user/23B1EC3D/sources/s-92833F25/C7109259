@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549700749232.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2951545967",
+    "id" : "C7109259",
+    "lastKnownWriteTime" : 1549714444,
+    "last_content_update" : 1549714444955,
+    "path" : "~/Dropbox/Projets/2019/Balance_ton_Taudis/balance_ton_taudis.Rmd",
+    "project_path" : "balance_ton_taudis.Rmd",
+    "properties" : {
+        "cursorPosition" : "190,0",
+        "scrollLine" : "173"
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_markdown"
+}

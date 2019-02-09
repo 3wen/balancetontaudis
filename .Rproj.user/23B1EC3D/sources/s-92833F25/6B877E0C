@@ -1,0 +1,22 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549710317211.000,
+    "dirty" : true,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "6B877E0C",
+    "lastKnownWriteTime" : 1486375868,
+    "last_content_update" : 1549711985584,
+    "path" : "~/Dropbox/Projets/Professions_de_foi/prof_foi.R",
+    "project_path" : null,
+    "properties" : {
+        "cursorPosition" : "17,76",
+        "scrollLine" : "2"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

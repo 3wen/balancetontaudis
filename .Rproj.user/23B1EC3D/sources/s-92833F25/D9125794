@@ -1,0 +1,23 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1549706058013.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "D9125794",
+    "lastKnownWriteTime" : 1549714441,
+    "last_content_update" : 1549714441207,
+    "path" : "~/Dropbox/Projets/2019/Balance_ton_Taudis/brouillon.R",
+    "project_path" : "brouillon.R",
+    "properties" : {
+        "cursorPosition" : "122,27",
+        "scrollLine" : "115",
+        "tempName" : "Untitled1"
+    },
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
