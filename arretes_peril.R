@@ -91,7 +91,7 @@ extraire_texte_pdf <- function(fichier){
 
 
 
-N <- list.files("data/arretes/", pattern = "\\.pdf$")
+N <- list.files("data/arretes/pdf", pattern = "\\.pdf$")
 pb <- txtProgressBar(min = 0, max = length(N), style = 3)
 for(i in 1:length(N)){
   try(extraire_texte_pdf(N[i]))
@@ -100,3 +100,8 @@ for(i in 1:length(N)){
 
 
 
+# A regarder (pistes)
+# Clustering en fonction des raisons de l'arrete
+# Clustering en fonction des actions mises en oeuvre
+# Nombre de mots danes les documents par arrondissement
+# Qui est l'expert
