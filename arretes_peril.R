@@ -60,6 +60,7 @@ any(duplicated(df_urls$filename))
 
 #' dl_arrete
 #' Telecharge l'arrete de mise en peril de la ligne `i` de df_urls
+# (requiert d'avoir deja un dossier data/arretes/pdf/)
 dl_arrete <- function(i){
   lien_dl <- str_c("http://logement-urbanisme.marseille.fr", df_urls$url[i])
   download.file(url = lien_dl, destfile = str_c("data/arretes/pdf/", df_urls$filename[i]))
@@ -228,6 +229,8 @@ extraire_texte_pdf <- function(fichier){
 N <- list.files("data/arretes/pdf", pattern = "\\.pdf$")
 pb <- txtProgressBar(min = 0, max = length(N), style = 3)
 
+# install.packages("pbapply")
+library(pbapply)
 textes <- 
   pbapply::pblapply(N, function(x){
   try(extraire_texte_pdf(N[i]))
@@ -258,8 +261,9 @@ str_extract("Les personnes morales déclarées responsables pénalement, dans le
 
 
 
-
-
+# install.packages("SnowballC")
+library(SnowballC)
+# install.packages("tm")
 library(tm)
 
 my_stopwords <- c(stopwords('french'))
