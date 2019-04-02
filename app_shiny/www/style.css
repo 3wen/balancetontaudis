@@ -1,0 +1,28 @@
+body{
+  margin: 0;
+}
+
+#shiny-tab-annonces  {
+	margin-top: 85px;
+	padding-top: 85px;
+}
+
+.modal-dialog{
+	margin-top: 125px;
+	padding-top: 125px;
+}
+
+#navig {
+  position: fixed;
+  top: 25px;
+  margin-top: 25px;
+  padding-top: 20px;
+  width: -webkit-calc(100% - 230px);
+    width:    -moz-calc(100% - 230px);
+    width:         calc(100% - 230px);
+  z-index:10000;
+  background-color:#ecf0f5;
+  -moz-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.4);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}

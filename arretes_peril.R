@@ -199,7 +199,23 @@ df_urls <- df_urls %>%
   )
 
 save(df_urls, file = "data/arretes_peril_geocoded.rda")
+write_csv2(df_urls, path = "data/arretes_peril_geocoded.csv")
 
+
+
+df_marseille <- df_urls
+
+p <- 
+  ggplot() +
+  geom_polygon(data = marseille_df, aes(x = long, y = lat, group = group), fill = "white", colour = "grey80") +
+  geom_point(data = df_marseille, aes(x = longitude, y = latitude), colour = "black", fill = "red", shape = 21, size = .5) +
+  coord_quickmap() +
+  labs(x = NULL, y = NULL) +
+  theme(axis.text = element_blank(), axis.ticks = element_blank()) +
+  ggtitle("Arretes (perils, mains levées, etc.)") +
+  geom_density_2d(data = df_marseille, aes(x = longitude, y = latitude))
+
+ggsave(p, filename = "test.pdf", width = 6, height = 6)
 
 
 
@@ -233,7 +249,7 @@ pb <- txtProgressBar(min = 0, max = length(N), style = 3)
 library(pbapply)
 textes <- 
   pbapply::pblapply(N, function(x){
-  try(extraire_texte_pdf(N[i]))
+  try(extraire_texte_pdf(x))
 })
 
 
